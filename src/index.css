@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*,
+*::before,
+*::after {
+  font-family: "Mulish", sans-serif;
+}
+body {
+  background-color: #003049;
+}
+nav {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+.image:hover .play {
+  transform: scale(1);
+}
+.play {
+  transition: all 0.15s;
+}
+.herosection-img {
+  position: relative;
+  padding: 5px;
+}
+/* .herosection-img img {
+  width: ;
+  height: 500px;
+} */
+
+.herosection-img::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.movie-div {
+  left: 20%;
+  bottom: -35%;
+  box-shadow: 1px 2px 4px rgba(255, 255, 255, 0.2);
+  /* From https://css.glass */
+  background: rgba(0, 48, 73, 0.28);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.6px);
+  -webkit-backdrop-filter: blur(4.6px);
+  border: 1px solid rgba(0, 48, 73, 0.4);
+}
+
+.btn-grad {
+  background-image: linear-gradient(
+    to right,
+    #1d2b64 0%,
+    #f8cdda 51%,
+    #1d2b64 100%
+  );
+  margin: 10px;
+  padding: 5px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  box-shadow: 0 0 5px #eee;
+  border-radius: 10px;
+}
+
+.btn-grad:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* From https://css.glass */
+/* background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(5.7px);
+  border: 1px solid rgba(255, 255, 255, 0.42); */
