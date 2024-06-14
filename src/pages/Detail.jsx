@@ -65,16 +65,18 @@ const Detail = () => {
               <span> {release_date}</span>
             </div>
 
-            <div>
-              <span className="sm:text-xs font-bold text-white">
-                Countries{" "}
-              </span>{" "}
-              -
-              {production_countries &&
-                production_countries.map((country) => {
-                  return <span key={country.name}> {country.name},</span>;
-                })}
-            </div>
+            {production_countries && (
+              <div>
+                <span className="sm:text-xs font-bold text-white">
+                  Countries{" "}
+                </span>{" "}
+                -
+                {production_countries &&
+                  production_countries.map((country) => {
+                    return <span key={country.name}> {country.name},</span>;
+                  })}
+              </div>
+            )}
             <button className="btn-grad bg-[#495057] flex gap-1 items-center">
               <MdPlayCircle />
               <span>Play Now</span>

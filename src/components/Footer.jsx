@@ -14,12 +14,14 @@ const Footer = () => {
           <PiTelevision />
         </p>
       </Link>
-      <div className="flex gap-4 items-center text-lg">
+      <div className="flex gap-4 items-center sm:flex-col text-lg">
         <p>Follow us on</p>
-        <FaFacebookSquare className="cursor-pointer" />
-        <BsInstagram className="cursor-pointer" />
-        <FaXTwitter className="cursor-pointer" />
-        <FaThreads className="cursor-pointer" />
+        <div className="flex gap-2 items-center">
+          <FaFacebookSquare className="cursor-pointer" />
+          <BsInstagram className="cursor-pointer" />
+          <FaXTwitter className="cursor-pointer" />
+          <FaThreads className="cursor-pointer" />
+        </div>
       </div>
     </div>
   );
