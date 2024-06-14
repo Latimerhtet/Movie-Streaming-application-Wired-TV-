@@ -22,7 +22,9 @@ const MoviesCollectionCard = ({
           </button>
         </Link>
       </div>
-      <div className={`flex gap-5 overflow-x-${overflow} flex-wrap`}>
+      <div
+        className={`flex gap-5 sm:justify-center overflow-x-${overflow} flex-wrap`}
+      >
         {movies.length &&
           movies.map((movie) => (
             <MovieCard

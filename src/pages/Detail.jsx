@@ -18,7 +18,7 @@ const Detail = () => {
   } = movie;
   return (
     <section
-      className="mt-[81px]  h-[100vh] bg-[#003049]  flex-col items-center justify-center "
+      className="mt-[81px]  h-[100vh] bg-[#003049]  flex-col items-center justify-center  "
       key={id}
     >
       {/* Backdrop Image */}
@@ -29,15 +29,17 @@ const Detail = () => {
       />
 
       {/* Movie details and descriptions */}
-      <div className="movie-div w-[900px] absolute bg-[#003049]  flex items-start gap-6 p-8 rounded-md">
+      <div className="movie-div w-[800px] sm:w-[340px] absolute left-14 sm:left-4 bg-[#003049]  flex items-start gap-6 p-8 rounded-md sm:flex-wrap">
         <img
-          className="w-52 h-[350px] rounded-md"
+          className="w-52 h-[350px] rounded-md sm:hidden sm:invisible"
           src={`https://image.tmdb.org/t/p/original/${poster_path}`}
           alt={title}
         />
-        <div className="w-[70%] text-white flex flex-col gap-4 items-start">
-          <p className=" text-3xl  font-bold">{title}</p>
-          <div>
+        <div className="w-[50%] text-white flex flex-col gap-4 items-start">
+          <p className="w-full text-3xl sm:w-[300px]  font-bold sm:text-[15px]">
+            {title}
+          </p>
+          <div className="sm:w-[300px]">
             <span className="font-extrabold text-amber-800">Duration</span> -
             <span> {runtime} min</span>
           </div>
@@ -47,22 +49,27 @@ const Detail = () => {
                 return (
                   <span
                     key={genre.id}
-                    className="p-2 bg-yellow-900 text-white rounded-md "
+                    className="p-2 sm:text-xs bg-yellow-900 text-white rounded-md "
                   >
                     {genre.name}
                   </span>
                 );
               })}
           </div>
-          <p>{overview}</p>
-          <div className="flex flex-col gap-2 items-start">
+          <p className="w-[100%] sm:w-[300px] sm:text-xs sm:text-wrap">
+            {overview}
+          </p>
+          <div className="sm:text-xs sm:w-[300px] flex flex-col gap-2 items-start">
             <div>
               <span className="font-bold text-white">Released Date</span> -
               <span> {release_date}</span>
             </div>
 
             <div>
-              <span className="font-bold text-white">Countries </span> -
+              <span className="sm:text-xs font-bold text-white">
+                Countries{" "}
+              </span>{" "}
+              -
               {production_countries &&
                 production_countries.map((country) => {
                   return <span key={country.name}> {country.name},</span>;
